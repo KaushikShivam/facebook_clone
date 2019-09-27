@@ -1,0 +1,5 @@
+<p><%= post.content %></p>
+<% if post.image_link != "" && !post.image_link.nil? %>
+  <%= image_tag post.image_link  %>
+<% end %>
+<p><%= post.user.name %></p>

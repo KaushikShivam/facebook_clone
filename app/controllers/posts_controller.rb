@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  
   before_action :authenticate_user!
+  before_action :get_post, only: [:edit, :update, :destroy]
   
   def new
     @post = Post.new
@@ -17,8 +17,7 @@ class PostsController < ApplicationController
     end
   end
   
-  def edit
-  end
+  def edit; end
   
   def update
   end
@@ -27,6 +26,7 @@ class PostsController < ApplicationController
   end
   
   def index
+    @posts = Post.all
   end
   
   private
