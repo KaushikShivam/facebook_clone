@@ -14,6 +14,7 @@ gem 'bcrypt', '3.1.12'
 gem 'faker', '1.7.3'
 gem 'bootstrap', '~> 4.0.0'
 gem 'devise', '~> 4.7', '>= 4.7.1'
+gem 'omniauth-facebook'
 
 
 group :development, :test do
