@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :get_post, only: [:edit, :update, :destroy]
+  before_action :get_post, only: [:edit, :update, :destroy, :show]
   before_action :correct_user, only: [:edit, :update, :destroy]
   
   def new
@@ -19,6 +19,8 @@ class PostsController < ApplicationController
   end
   
   def edit; end
+  
+  def show; end
   
   def update
     if @post.update(post_params)
