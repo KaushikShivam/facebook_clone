@@ -15,7 +15,7 @@ gem 'faker', '1.7.3'
 gem 'bootstrap', '~> 4.0.0'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'omniauth-facebook'
-
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.2'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
