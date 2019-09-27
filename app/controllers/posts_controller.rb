@@ -13,8 +13,8 @@ class PostsController < ApplicationController
       redirect_to root_path
       flash[:success] = "Post created successfully"
     else
-      render 'new'
       flash.now[:danger] = "Post creation failed. Please enter valid information"
+      render 'new'
     end
   end
   
@@ -27,8 +27,8 @@ class PostsController < ApplicationController
       flash[:success] = "Post saved successfully"
       redirect_to root_path
     else
-      render 'edit'
       flash.now[:danger] = "Post update failed. Please enter valid information"
+      render 'edit'
     end
   end
   
