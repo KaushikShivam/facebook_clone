@@ -13,6 +13,7 @@ RSpec.describe 'user creates post', type: :feature do
       visit new_post_path
       fill_in('post[content]', with: 'content')
       fill_in('post[image_link]', with: 'www.image.com')
+      click_button('Submit')
       expect(page).to have_content('Post created successfully')
     end
 
@@ -20,6 +21,7 @@ RSpec.describe 'user creates post', type: :feature do
       visit new_post_path
       fill_in('post[content]', with: '')
       fill_in('post[image_link]', with: '')
+      click_button('Submit')
       expect(page).to have_content('Post creation failed. Please enter valid information')
     end
     
