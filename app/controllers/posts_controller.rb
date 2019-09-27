@@ -20,9 +20,19 @@ class PostsController < ApplicationController
   def edit; end
   
   def update
+    if @post.update(post_params)
+      flash[:notice] = "Post saved successfully"
+      redirect_to root_path
+    else
+      render 'edit'
+      flash.now[:alert] = "Post update failed. Please enter valid information"
+    end
   end
   
   def destroy
+    @post.destroy
+    flash[:notice] = "Post deleted successfully"
+    redirect_to root_path
   end
   
   def index
