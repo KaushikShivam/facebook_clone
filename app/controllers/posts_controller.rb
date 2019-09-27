@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :get_post, only: [:edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   
   def new
     @post = Post.new
@@ -46,6 +47,13 @@ class PostsController < ApplicationController
   
   def get_post
     @post = Post.find(params[:id])
+  end
+  
+  def correct_user
+    if current_user != @post.user
+      flash[:alert] = "You're not authorized to visit this page."
+      redirect_to root_path
+    end
   end
   
 end
