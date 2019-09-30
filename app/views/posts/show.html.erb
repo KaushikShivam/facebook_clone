@@ -1,1 +1,23 @@
-<%= render @post %>
+<div class="card">
+  <h3><%= @post.content %></h3>
+  <% if post_exists?(@post) %>
+    <img src="<%= @post.image_link %>" alt="<%= @post.content %>">
+  <% end %>
+  <p><%= @post.user.name %></p>
+  <p><%= @post.comments.count %> comments</p>
+  <% if current_post?(@post) %>
+    <%= link_to "Edit post", edit_post_path(@post), class: 'btn btn-primary' %>
+    <%= link_to "Delete post", @post, method: :delete, class: 'btn btn-primary' %>
+  <% end %>
+  
+  <%= render 'comments/form' %>
+  
+  <% @post.comments.each do |comment| %>
+    <div class="card">
+      <p>Commented by - <strong><%= comment.user.name %></strong></p>
+      <p><%= comment.content %></p>
+    </div>
+  <% end %>
+  
+  
+</div>
