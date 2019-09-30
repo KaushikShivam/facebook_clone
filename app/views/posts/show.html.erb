@@ -11,13 +11,7 @@
   <% end %>
   
   <%= render 'comments/form' %>
-  
-  <% @post.comments.each do |comment| %>
-    <div class="card">
-      <p>Commented by - <strong><%= comment.user.name %></strong></p>
-      <p><%= comment.content %></p>
-    </div>
-  <% end %>
+  <%= render @post.comments %>
   
   
 </div>

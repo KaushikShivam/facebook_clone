@@ -1,0 +1,7 @@
+<div class="card">
+  <p>Commented by - <strong><%= comment.user.name %></strong></p>
+  <p><%= comment.content %></p>
+  <% if comment.user == current_user %>
+    <%= link_to 'Delete comment', post_comment_path(@post.id, id: comment.id), method: :delete %>
+  <% end %>
+</div>
