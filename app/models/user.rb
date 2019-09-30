@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
 
   has_many :friendships
-  has_many :friends, through: :friendships, :class_name => 'user'
+  has_many :friends, through: :friendships
   
   def self.all_except(user)
     where.not(id: user)
