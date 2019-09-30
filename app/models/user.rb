@@ -6,7 +6,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates_presence_of :name, :image_link
-  has_many :posts
+  
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def self.all_except(user)
     where.not(id: user)
