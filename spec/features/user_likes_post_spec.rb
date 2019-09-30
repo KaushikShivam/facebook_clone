@@ -18,7 +18,7 @@ RSpec.describe 'user likes a post', type: :feature do
   
   scenario "creater of post likes successfully" do
     click_on("Like")    
-    expect(page).to have_content('1 likes')
+    expect(page).to have_content('1 like')
   end
 
   scenario "another user likes a post successfully" do
@@ -33,6 +33,6 @@ RSpec.describe 'user likes a post', type: :feature do
     visit post_path(@post)
     click_on("Like")
     expect(page).to have_content('Post liked successfully')
-    expect(page).to have_content('1 likes')
+    expect(page).to have_content('1 like')
   end
 end

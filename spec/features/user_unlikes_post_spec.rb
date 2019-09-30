@@ -15,7 +15,7 @@ RSpec.describe 'user unlikes a post', type: :feature do
     @post = @user.posts.create!(content: "Random Post", image_link: "image link")
     visit post_path(@post)
     click_on("Like")    
-    expect(page).to have_content('1 likes')
+    expect(page).to have_content('1 like')
   end
   
   scenario "successfully" do
