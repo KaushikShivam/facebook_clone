@@ -5,6 +5,12 @@
   <% end %>
   <p><%= @post.user.name %></p>
   <p><%= @post.comments.count %> comments</p>
+  <% if liked?(@post) %>
+    <%= link_to 'Unlike', post_like_path(@post.id, id: current_like(@post).id), method: :delete %>
+  <% else %>
+    <%= link_to 'Like', post_likes_path(@post), method: :post %>
+  <% end %>  
+  <p><%= @post.likes.count%> likes </p>
   <% if current_post?(@post) %>
     <%= link_to "Edit post", edit_post_path(@post), class: 'btn btn-primary' %>
     <%= link_to "Delete post", @post, method: :delete, class: 'btn btn-primary' %>
