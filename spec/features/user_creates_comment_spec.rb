@@ -11,21 +11,20 @@ RSpec.describe 'user creates comment', type: :feature do
     fill_in('user[email]', with: @user.email)
     fill_in('user[password]', with: @user.password)
     click_button('Log in')
-    
-    @post = @user.posts.create!(content: "Random Post", image_link: "image link")
+
+    @post = @user.posts.create!(content: 'Random Post', image_link: 'image link')
     visit post_path(@post)
   end
-  
-  scenario "successfully" do
+
+  scenario 'successfully' do
     fill_in('comment[content]', with: 'What a post!')
     click_button('Submit')
     expect(page).to have_content('What a post!')
   end
-  
-  scenario "unsuccessfully" do
+
+  scenario 'unsuccessfully' do
     fill_in('comment[content]', with: '')
     click_button('Submit')
     expect(page).to have_content('Comment creation failed')
   end
-
 end

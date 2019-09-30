@@ -11,14 +11,14 @@ RSpec.describe 'user unlikes a post', type: :feature do
     fill_in('user[email]', with: @user.email)
     fill_in('user[password]', with: @user.password)
     click_button('Log in')
-    
-    @post = @user.posts.create!(content: "Random Post", image_link: "image link")
+
+    @post = @user.posts.create!(content: 'Random Post', image_link: 'image link')
     visit post_path(@post)
-    click_on("Like")    
+    click_on('Like')
     expect(page).to have_content('1 like')
   end
-  
-  scenario "successfully" do
+
+  scenario 'successfully' do
     click_on('Unlike')
     expect(page).to have_content('0 likes')
   end
