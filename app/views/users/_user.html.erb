@@ -1,3 +1,6 @@
 <h4><%= user.name %></h4>
 <p><%= user.email %></p>
+<% if Friendship.exists?(user: current_user, friend: user)%>
+    <p>Friend</p>
+<% end %>
 <br>

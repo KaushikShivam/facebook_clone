@@ -6,4 +6,18 @@ class UsersController < ApplicationController
   end
 
   def show; end
+
+  def create_friendship
+    @user = User.find(params[:id])
+    current_user.friendships.create!(friend_id: @user.id, status: 0)
+  end
+
+  def update_friendship
+    @user = User.find(params[:id])
+    Friendship.find_by(user: current_user, friend: @user).accepted!
+  end
+
+  def destroy_friendship
+    @user = User.find(params[:id])
+    Friendship.find_by(user: current_user, friend: @user).destroy
 end
