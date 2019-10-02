@@ -5,7 +5,10 @@ class UsersController < ApplicationController
     @users = User.all_except(current_user)
   end
 
-  def show; end
+  def show
+    @user = current_user
+    @posts = @user.posts
+  end
 
   def showrequests
     @requested_friends = User.joins("INNER JOIN friendships ON users.id=friendships.friend_id AND friendships.status=1").where.not("users.id=?",current_user.id).distinct
