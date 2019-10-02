@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   end
 
   resources :users do
+    get 'friend_requests', to: 'users#showrequests' 
     member do
       get :create_friendship
       get :update_friendship
