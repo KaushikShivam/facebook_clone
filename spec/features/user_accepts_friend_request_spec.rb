@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'user deletes a friend request', type: :feature do
+RSpec.describe 'user accepts a friend request', type: :feature do
   before :each do
     @user = User.create(name: 'fatima', password: 'password',
                         password_confirmation: 'password',
@@ -16,12 +16,15 @@ RSpec.describe 'user deletes a friend request', type: :feature do
     click_button('Log in')
     visit users_path
     click_on('Add friend')
-
+    click_on('Log Out')
   end
 
   scenario 'successfully' do
-    click_on('Cancel Friend Request')
-    expect(page).to have_content('Friend request deleted')
-    expect(page).to have_content('Add friend')
+    fill_in('user[email]', with: @friend.email)
+    fill_in('user[password]', with: @friend.password)
+    click_button('Log in')
+    visit user_friend_requests_path(@friend)
+    click_on('Accept Friend Request')
+    expect(page).to have_content('Friend added')
   end
 end
