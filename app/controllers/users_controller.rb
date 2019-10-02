@@ -11,27 +11,28 @@ class UsersController < ApplicationController
   end
 
   def showrequests
-    @requested_friends = User.joins("INNER JOIN friendships ON users.id=friendships.friend_id AND friendships.status=1").where.not("users.id=?",current_user.id).distinct
+    @requested_friends = User.joins('INNER JOIN friendships ON users.id=friendships.friend_id
+                                    AND friendships.status=1').where.not('users.id=?', current_user.id).distinct
   end
 
   def create_friendship
     @user = User.find(params[:id])
     current_user.friendships.create!(friend_id: @user.id, status: 0)
-    flash[:success]="Friend request sent"
+    flash[:success] = 'Friend request sent'
     redirect_to users_path
   end
 
   def update_friendship
     @user = User.find(params[:id])
     Friendship.find_by(user: current_user, friend: @user).accepted!
-    flash[:success]="Friend added"
+    flash[:success] = 'Friend added'
     redirect_to users_path
   end
 
   def destroy_friendship
     @user = User.find(params[:id])
     Friendship.find_by(user: current_user, friend: @user).destroy
-    flash[:success]="Friend request deleted"
+    flash[:success] = 'Friend request deleted'
     redirect_to users_path
   end
 end

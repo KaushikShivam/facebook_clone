@@ -13,10 +13,8 @@ class User < ApplicationRecord
 
   has_many :friendships
   has_many :friends, through: :friendships
-  
-  
+
   def self.all_except(user)
     where.not(id: user)
   end
-
 end

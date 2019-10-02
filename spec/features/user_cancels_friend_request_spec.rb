@@ -16,7 +16,6 @@ RSpec.describe 'user deletes a friend request', type: :feature do
     click_button('Log in')
     visit users_path
     click_on('Add friend')
-
   end
 
   scenario 'successfully' do

@@ -17,10 +17,10 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.2'
 gem 'faker', '1.7.3'
+gem 'gravatar_image_tag', '~> 1.2'
 gem 'jquery-rails', '4.3.1'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'omniauth-facebook'
-gem 'gravatar_image_tag', '~> 1.2'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
