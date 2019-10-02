@@ -6,7 +6,7 @@ RSpec.describe Comment, type: :model do
   before :each do
     @user = User.create(name: 'shivam', password: 'password',
                         password_confirmation: 'password',
-                        email: 'shivam@gmail.com', image_link: 'www.google.com')
+                        email: 'shivam@gmail.com')
     @user.reload
     @post = @user.posts.new(content: 'content', image_link: 'www.image.com')
     @comment = Comment.new(content: 'content', user: @user, post: @post)

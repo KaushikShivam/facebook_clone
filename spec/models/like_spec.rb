@@ -6,7 +6,7 @@ RSpec.describe Like, type: :model do
   before :each do
     @user = User.create(name: 'shivam', password: 'password',
                         password_confirmation: 'password',
-                        email: 'shivam@gmail.com', image_link: 'www.google.com')
+                        email: 'shivam@gmail.com')
     @post = @user.posts.create(content: 'content', image_link: 'www.image.com')
     @like = @post.likes.build(user: @user)
   end

@@ -6,7 +6,7 @@ RSpec.describe 'user likes a post', type: :feature do
   before :each do
     @user = User.create(name: 'fatima', password: 'password',
                         password_confirmation: 'password',
-                        email: 'fatima@gmail.com', image_link: 'jfiehbn')
+                        email: 'fatima@gmail.com')
     visit new_user_session_path
     fill_in('user[email]', with: @user.email)
     fill_in('user[password]', with: @user.password)
@@ -22,7 +22,7 @@ RSpec.describe 'user likes a post', type: :feature do
   end
 
   scenario 'another user likes a post successfully' do
-    @another_user = User.create(name: 'another', email: 'another@user.com', image_link: 'dvbafa',
+    @another_user = User.create(name: 'another', email: 'another@user.com',
                                 password: 'password', password_confirmation: 'password')
     click_on('Log Out')
     expect(page).to have_content('Signed out successfully.')
