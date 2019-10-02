@@ -6,9 +6,8 @@ class PostsController < ApplicationController
   before_action :correct_user, only: %i[edit update destroy]
 
   def index
-    @posts = current_user.posts.merge(Post.joins("INNER JOIN friendships ON posts.user_id=friendships.user_id AND friendships.friend_id=#{current_user.id}"))
-    # @posts.order(created_at: :desc)
-
+     @posts = current_user.posts + Post.joins("INNER JOIN friendships ON posts.user_id=friendships.user_id AND friendships.friend_id=#{current_user.id}")
+     @posts = @posts.sort { |a, b| b.created_at <=> a.created_at }
   end
   
   def new
