@@ -10,3 +10,23 @@
   background-size: cover;
   background-blend-mode: multiply;
 }
+
+.custom-sm-font {
+  font-size: 15px;
+}
+
+.custom-card-container {
+  min-width: 100%;
+  min-height: 200px;
+  display: flex;
+  overflow-x: auto;
+}
+
+.custom-card-container::-webkit-scrollbar {
+  display: none;
+}
+
+.custom-card {
+  min-width: 18rem;
+  margin: 5px;
+}

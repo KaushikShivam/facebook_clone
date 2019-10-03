@@ -1,13 +1,31 @@
-<h4><%= user.name %></h4>
-<p><%= user.email %></p>
-<% if !Friendship.exists?(user: current_user, friend: user)%>
-  <%= link_to 'Add friend',create_friendship_user_path(user.id) %>
-<% else %>
-	<% if Friendship.find_by(user:current_user,friend: user).pending? %>
-		<%= link_to 'Cancel Friend Request',destroy_friendship_user_path(user.id) %>
-	<% end %>
-		<% if Friendship.find_by(user:current_user,friend: user).requested? %>
-		<%= link_to 'Accept Friend Request',update_friendship_user_path(user.id) %>
-	<% end %>
-<% end %>
-<br>
+<div class="card rounded custom-card">
+	<%= image_tag random_image, class: 'card-img-top' %>
+  <div class="card-body my-2">
+		<div class="row">
+			<div class="col-3">
+				<%= gravatar_helper user %>
+			</div>
+			<div class="col-9">
+				<h5 class="card-title text-primary"><%= user.name %></h5>
+				<p class="card-title text-secondary"><%= user.email %></p>
+				<p class="card-text">
+					<span class="mr-2 text-muted custom-sm-font"><i class="fa fa-bolt"></i> <%= pluralize(user.friends.count, 'friend') %></span>
+					<span class="text-muted custom-sm-font"><i class="fa fa-comment"></i> <%= pluralize(user.posts.count, 'post') %></span>
+				</p>
+			</div>
+		</div>
+    
+    <% if !Friendship.exists?(user: current_user, friend: user)%>
+  		<%= link_to 'Add friend',create_friendship_user_path(user.id), class: 'btn btn-light mt-4 d-block' %>
+		<% else %>
+			<% if Friendship.find_by(user:current_user,friend: user).pending? %>
+				<%= link_to 'Cancel Friend Request',destroy_friendship_user_path(user.id), class: 'btn btn-light mt-4 d-block' %>
+			<% end %>
+				<% if Friendship.find_by(user:current_user,friend: user).requested? %>
+				<%= link_to 'Accept Friend Request',update_friendship_user_path(user.id), class: 'btn btn-light mt-4 d-block' %>
+			<% end %>
+		<% end %>
+  </div>
+</div>
+
+
