@@ -13,7 +13,8 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :users, path: '', path_names: { sign_up: 'signup', sign_in: 'login', edit: 'edit-user'}
+  devise_for :users, path: '', path_names: { sign_up: 'signup', sign_in: 'login', edit: 'edit-user'},
+             :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
   get 'users/show/:id', to: 'users#show'
   get 'users', to: 'users#index'

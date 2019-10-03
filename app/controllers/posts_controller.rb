@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = current_user.posts + Post.joins("INNER JOIN friendships ON posts.user_id=friendships.user_id
-                                             AND friendships.friend_id=#{current_user.id}")
+                                             AND friendships.friend_id=#{current_user.id} AND friendships.status=2")
     @posts = @posts.sort { |a, b| b.created_at <=> a.created_at }
   end
 
