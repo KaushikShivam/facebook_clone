@@ -17,13 +17,13 @@ RSpec.describe Friendship, type: :model do
     end
 
     it 'with invalid user' do
-      @Friendship.user = nil
-      expect(friendship).to_not be_valid
+      @friendship.user = nil
+      expect(@friendship).to_not be_valid
     end
 
     it 'with invalid friend' do
       @friendship.friend = nil
-      expect(@Friendship).to_not be_valid
+      expect(@friendship).to_not be_valid
     end
   end
 end
