@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   resources :posts do
     resources :comments
     resources :likes
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
   get 'users', to: 'users#index'
   
   authenticated :user do
-    root to: 'posts#index'
+    root to: 'pages#home'
   end
   
   devise_scope :user do
