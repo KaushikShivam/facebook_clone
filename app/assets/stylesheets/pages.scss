@@ -27,11 +27,50 @@
 }
 
 .custom-card {
-  min-width: 18rem;
-  margin: 5px;
+  min-width: 20rem;
+  margin-right: 5px;
 }
 
-.custom-status{
+.custom-status {
   background-color: #eeeeee;
   border-radius: 20000px;
+}
+
+.custom-background {
+  background-color: #F2F3F5;
+}
+
+.custom-icon-size {
+  font-size: 25px !important;
+}
+
+.icon {
+  &-blue {
+    color: #4A90E2 !important;
+  }
+
+  &-red {
+    color: #F14742;
+  }
+
+  &-yellow {
+    color: #F7B239;
+  }
+}
+
+.post-input {
+  flex-grow: 1;
+
+  input {
+    width: 100%;
+    border: none;
+    height: 50px;
+  }
+
+}
+
+.gravatar-size {
+  width: 70px;
+  height: 70px;
+  align-self: center;
 }
