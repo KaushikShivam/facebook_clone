@@ -5,6 +5,12 @@ class PostsController < ApplicationController
   before_action :find_post, only: %i[edit update destroy show]
   before_action :correct_user, only: %i[edit update destroy]
 
+  def index
+    @posts = current_user.posts + Post.joins("INNER JOIN friendships ON posts.user_id=friendships.user_id
+                                             AND friendships.friend_id=#{current_user.id}")
+    @posts = @posts.sort { |a, b| b.created_at <=> a.created_at }
+  end
+
   def new
     @post = Post.new
   end
@@ -38,10 +44,6 @@ class PostsController < ApplicationController
     @post.destroy
     flash[:success] = 'Post deleted successfully'
     redirect_to root_path
-  end
-
-  def index
-    @posts = Post.all
   end
 
   private

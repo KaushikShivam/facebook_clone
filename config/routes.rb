@@ -4,7 +4,14 @@ Rails.application.routes.draw do
     resources :likes
   end
 
-
+  resources :users do
+    get 'friend_requests', to: 'users#showrequests' 
+    member do
+      get :create_friendship
+      get :update_friendship
+      get :destroy_friendship
+    end
+  end
 
   devise_for :users, path: '', path_names: { sign_up: 'signup', sign_in: 'login', edit: 'edit-user'}
   

@@ -2,24 +2,25 @@
 
 require 'rails_helper'
 
-RSpec.describe 'user unlikes a post', type: :feature do
+RSpec.describe 'user deletes a friend request', type: :feature do
   before :each do
     @user = User.create(name: 'fatima', password: 'password',
                         password_confirmation: 'password',
                         email: 'fatima@gmail.com')
+    @friend = User.create(name: 'shivam', password: 'password',
+                          password_confirmation: 'password',
+                          email: 'shivam@gmail.com')
     visit new_user_session_path
     fill_in('user[email]', with: @user.email)
     fill_in('user[password]', with: @user.password)
     click_button('Log in')
-
-    @post = @user.posts.create!(content: 'Random Post', image_link: 'image link')
-    visit post_path(@post)
-    click_on('Like')
-    expect(page).to have_content('1 like')
+    visit users_path
+    click_on('Add friend')
   end
 
   scenario 'successfully' do
-    click_on('Unlike')
-    expect(page).to have_content('0 likes')
+    click_on('Cancel Friend Request')
+    expect(page).to have_content('Friend request deleted')
+    expect(page).to have_content('Add friend')
   end
 end
