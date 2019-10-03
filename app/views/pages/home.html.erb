@@ -13,10 +13,27 @@
     
     <!-- suggested friends -->
   </div>
-  <div class="col-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis iure similique voluptate, perspiciatis ad ducimus ab sed? Iure, voluptate excepturi, exercitationem tenetur illum aut nemo placeat et doloremque reprehenderit at.</div>
-  <div class="col-9 pr-0">
-    <div class="custom-card-container my-4">
+  <div class="col-3 mt-4">
+    <h5>Friends</h5>
+    <div>
+      <% @friends.each do |friend| %>
+      <div class="mb-2">
+        <%= link_to friend do%>
+          <%= gravatar_helper friend %>
+          <span><%= friend.name %></span>
+        <% end %>
+      </div> 
+      <% end %>
+    </div>
+  </div>
+  <div class="col-9 pr-0 mt-4">
+    <h5>Suggested friends</h5>
+    <div class="custom-card-container ">
       <%= render @suggested_people %>
     </div>
+    <%= render 'posts/form'%>
+  </div>
+  <div>
+      <%# <%= render @posts %>
   </div>
 </div>
