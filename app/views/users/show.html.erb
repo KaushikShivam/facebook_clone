@@ -1,0 +1,8 @@
+<h2>Profile</h2>
+
+<%= gravatar_image_tag(@user.email.gsub('spam', 'mdeering'), alt: @user.name ) %>
+<p>Name - <strong><%= @user.name %></strong></p>
+<p>Email - <strong><%= @user.email %></strong></p>
+
+<h2>My Posts</h2>
+<%= render @posts %>

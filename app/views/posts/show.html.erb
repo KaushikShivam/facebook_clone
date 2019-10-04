@@ -1,0 +1,27 @@
+<div class="card">
+  <h3><%= @post.content %></h3>
+  <% if post_exists?(@post) %>
+    <img src="<%= @post.image_link %>" alt="<%= @post.content %>">
+  <% end %>
+  <p><%= @post.user.name %></p>
+  <div>
+    <span><%= pluralize(@post.comments.count, 'comment') %></span>
+    <span><%= pluralize(@post.likes.count , 'like') %></span>
+  </div>
+  <% if liked?(@post) %>
+    <%= link_to 'Unlike', post_like_path(@post.id, id: current_like(@post).id), method: :delete %>
+  <% else %>
+    <%= link_to 'Like', post_likes_path(@post), method: :post %>
+  <% end %>  
+  <% if current_post?(@post) %>
+    <div>
+      <span><%= link_to "Edit post", edit_post_path(@post), class: 'btn btn-primary' %></span>
+      <span><%= link_to "Delete post", @post, method: :delete, class: 'btn btn-primary' %></span>
+    </div>
+  <% end %>
+  
+  <%= render 'comments/form' %>
+  <%= render @post.comments %>
+  
+  
+</div>

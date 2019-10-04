@@ -1,0 +1,13 @@
+<h4><%= user.name %></h4>
+<p><%= user.email %></p>
+<% if !Friendship.exists?(user: current_user, friend: user)%>
+  <%= link_to 'Add friend',create_friendship_user_path(user.id) %>
+<% else %>
+	<% if Friendship.find_by(user:current_user,friend: user).pending? %>
+		<%= link_to 'Cancel Friend Request',destroy_friendship_user_path(user.id) %>
+	<% end %>
+		<% if Friendship.find_by(user:current_user,friend: user).requested? %>
+		<%= link_to 'Accept Friend Request',update_friendship_user_path(user.id) %>
+	<% end %>
+<% end %>
+<br>
