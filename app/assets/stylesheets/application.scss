@@ -14,4 +14,26 @@
  *= require_self
  */
 
-@import 'pages'
+@import 'pages';
+
+body {
+  position: relative;
+}
+
+.navigation {
+  top: 0;
+  z-index: 1000;
+  position: sticky;
+  display: flex;
+  justify-content: center;
+
+  box-shadow: 0 4px 8px rgba($color: #000000, $alpha: 0.2);
+
+  a {
+    padding: 0 20px;
+  }
+
+  img {
+    height: 60px;
+  }
+}
