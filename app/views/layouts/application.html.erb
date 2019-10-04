@@ -11,27 +11,19 @@
 
   <body>
     <!-- Navigation starts -->    
-    <nav class="navigation py-2 bg-white">
+    <nav class="navigation bg-white">
       <% if current_user.nil? %>
         <%= link_to new_user_session_path, class: 'nav-item nav-link' do %>
           <%= image_tag("home", :alt => "rss feed") %>
         <% end %>
       <% else %>
-        <%= link_to root_path do %>
-          <%= image_tag("home", :alt => "rss feed") %>
-        <% end %>
-        <%= link_to users_path do %>
-          <%= image_tag("home", :alt => "rss feed") %>
-        <% end %>
+        <div class="nav-box"><%= link_to 'Home', root_path, class: 'main-nav-link'  %></div>
+        <div class="nav-box"><%= link_to 'Friends', users_path, class: 'main-nav-link' %></div>
         <%= link_to current_user do %>
           <%= gravatar_helper current_user %>
         <% end %>
-        <%= link_to user_friend_requests_path(current_user) do %>
-          <%= image_tag("home", :alt => "rss feed") %>
-        <% end %>
-        <%= link_to destroy_user_session_path, method: :delete do %>
-          <%= image_tag("home", :alt => "rss feed") %>
-        <% end %>
+        <div class="nav-box"><%= link_to 'Friend Requests', user_friend_requests_path(current_user), class: 'main-nav-link' %></div>
+        <div class="nav-box"><%= link_to 'Log out',destroy_user_session_path, method: :delete, class: 'main-nav-link' %></div>
       <% end %>
     </nav>
     

@@ -26,11 +26,40 @@ body {
   position: sticky;
   display: flex;
   justify-content: center;
+  align-items: center;
 
   box-shadow: 0 4px 8px rgba($color: #000000, $alpha: 0.2);
 
   a {
     padding: 0 20px;
+  }
+
+  .nav-box {
+    height: 75px;
+    display: flex;
+    align-items: center;
+  }
+
+  .main-nav-link,
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    text-decoration: none;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+
+    padding-right: 20px;
+    padding-left: 20px;
+    transition: all .3s;
+    color: gray !important;
+  }
+
+  .main-nav-link:hover,
+  .main-nav-link:active {
+    border-top: 4px solid #007bff;
+    border-bottom: 4px solid #007bff;
+    padding-top: 22px;
+    padding-bottom: 23px;
+    color: #007bff !important;
   }
 
   img {
