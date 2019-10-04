@@ -297,6 +297,6 @@ Devise.setup do |config|
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
   
-  config.omniauth :facebook, "505303930034254", "3073fb5e453532210c308fc1a93ff264", callback_url: "http://localhost:3000/auth/facebook/callback"
+  config.omniauth :facebook, "505303930034254", "3073fb5e453532210c308fc1a93ff264", callback_url: "https://morning-falls-89247.herokuapp.com/auth/facebook/callback"
   
 end
