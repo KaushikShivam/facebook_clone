@@ -6,14 +6,14 @@ class LikesController < ApplicationController
   def create
     @like = @post.likes.build(user: current_user)
     @like.save
-    flash[:success] = 'Post liked successfully'
+    flash[:notice] = 'Post liked successfully'
     redirect_back(fallback_location: root_path)
   end
 
   def destroy
     @like = Like.find(params[:id])
     @like.delete
-    flash[:success] = 'Post unliked successfully'
+    flash[:notice] = 'Post unliked successfully'
     redirect_back(fallback_location: root_path)
   end
 

@@ -19,9 +19,9 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to root_path
-      flash[:success] = 'Post created successfully'
+      flash[:notice] = 'Post created successfully'
     else
-      flash.now[:danger] = 'Post creation failed. Please enter valid information'
+      flash.now[:notice] = 'Post creation failed. Please enter valid information'
       render 'new'
     end
   end
@@ -32,17 +32,17 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      flash[:success] = 'Post saved successfully'
+      flash[:notice] = 'Post saved successfully'
       redirect_to root_path
     else
-      flash.now[:danger] = 'Post update failed. Please enter valid information'
+      flash.now[:notice] = 'Post update failed. Please enter valid information'
       render 'edit'
     end
   end
 
   def destroy
     @post.destroy
-    flash[:success] = 'Post deleted successfully'
+    flash[:notice] = 'Post deleted successfully'
     redirect_to root_path
   end
 
@@ -59,7 +59,7 @@ class PostsController < ApplicationController
   def correct_user
     return if current_user == @post.user
 
-    flash[:danger] = "You're not authorized to visit this page."
+    flash[:notice] = "You're not authorized to visit this page."
     redirect_to root_path
   end
 end

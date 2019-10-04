@@ -18,21 +18,21 @@ class UsersController < ApplicationController
   def create_friendship
     @user = User.find(params[:id])
     current_user.friendships.create!(friend_id: @user.id, status: 0)
-    flash[:success] = 'Friend request sent'
+    flash[:notice] = 'Friend request sent'
     redirect_to users_path
   end
 
   def update_friendship
     @user = User.find(params[:id])
     Friendship.find_by(user: current_user, friend: @user).accepted!
-    flash[:success] = 'Friend added'
+    flash[:notice] = 'Friend added'
     redirect_to users_path
   end
 
   def destroy_friendship
     @user = User.find(params[:id])
     Friendship.find_by(user: current_user, friend: @user).destroy
-    flash[:success] = 'Friend request deleted'
+    flash[:notice] = 'Friend request deleted'
     redirect_to users_path
   end
 end

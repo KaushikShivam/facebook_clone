@@ -5,9 +5,9 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(content: comment_params[:content], user: current_user)
     if @comment.save
-      flash[:success] = 'Comment created successfully!'
+      flash[:notice] = 'Comment created successfully!'
     else
-      flash[:danger] = 'Comment creation failed'
+      flash[:notice] = 'Comment creation failed'
     end
     redirect_to @post
   end
@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
     @comment.destroy
-    flash[:success] = 'Comment deleted successfully!'
+    flash[:notice] = 'Comment deleted successfully!'
     redirect_to @post
   end
 
