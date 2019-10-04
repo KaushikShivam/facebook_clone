@@ -70,7 +70,40 @@
 }
 
 .gravatar-size {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   align-self: center;
+}
+
+.post-image {
+  height: 330px;
+  width: 100%;
+}
+
+.post-background {
+  background-color: white;
+}
+
+.custom-post-comment {
+  .icons {
+    font-size: 30px;
+  }
+
+  &>* {
+    padding-right: 50px;
+  }
+
+  span {
+    font-size: 20px
+  }
+
+  .text-muted {
+    &-custom {
+      color: rgb(206, 206, 206);
+    }
+
+    &-red {
+      color: #F14742;
+    }
+  }
 }

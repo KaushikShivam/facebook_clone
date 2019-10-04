@@ -11,7 +11,7 @@
       </div>
     </div>
     
-    <!-- suggested friends -->
+  <!-- suggested friends -->
   </div>
   <div class="col-3 mt-4">
     <h5>Friends</h5>
@@ -31,9 +31,15 @@
     <div class="custom-card-container ">
       <%= render @suggested_people %>
     </div>
+    <!-- Create post form -->
     <%= render 'posts/form'%>
   </div>
-  <div>
-    <%#= render @posts %>
+  <!-- Posts container -->
+  <div class="row py-4">
+    <div class="col-6">
+      <%= render @posts %>
+    </div>
+    
   </div>
 </div>
+

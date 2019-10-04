@@ -8,5 +8,9 @@ module PagesHelper
     "https://picsum.photos/id/#{random_id}/400/200"
   end
   
+  def get_three_comments(post)
+    post.comments.limit(3)
+  end
+  
   
 end
