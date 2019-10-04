@@ -1,1 +1,10 @@
-<%= render @requested_friends%>
+<div class="custom-user-index">
+  <div class="row">
+  <% @requested_friends.each do |user| %>
+    <div class="col-3">
+      <%= render user %>
+    </div>
+  <% end %>
+</div>
+</div>
+
