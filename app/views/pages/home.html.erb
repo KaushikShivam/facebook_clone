@@ -36,12 +36,19 @@
   </div>
   <!-- Posts container -->
   <div class="row py-4">
+    <% left_posts = [] %>
+    <% right_posts = [] %>
+    <% @posts.length.times do |i| %>
+      <% i.even? ? left_posts.push(@posts[i]) : right_posts.push(@posts[i]) %>
+    <% end %>
     <div class="col-6">
-      <%= render @posts %>
+      <%= render left_posts %>
     </div>
     <div class="col-6">
-      <%= render @posts %>
+      <%= render right_posts %>
     </div>
+    
+    
   </div>
 </div>
 
