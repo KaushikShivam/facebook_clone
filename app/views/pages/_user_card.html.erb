@@ -1,0 +1,24 @@
+<div class="rounded user-card bg-white">
+  <%= image_tag random_image, class: 'card-bg d-block w-100' %>
+  <%= gravatar_helper(current_user, 'card-gravatar') %>
+  <div class=card-main>
+    <h3><%= current_user.name %></h3>
+    <p class="text-secondary h6"><%= current_user.email %></p>
+  </div>
+  <div class="card-content">
+    <div class="card-stat">
+      <h5>Friends</h5>
+      <p class="text-secondary"><%= current_user.friends.count %></p>
+    </div>
+    <div class="card-stat">
+      <h5>Posts</h5>
+      <p class="text-secondary"><%= current_user.posts.count %></p>
+    </div>
+    <div class="card-stat">
+      <h5>Comments</h5>
+      <p class="text-secondary"><%= current_user.comments.count %></p>
+    </div>
+  </div>
+</div>
+
+

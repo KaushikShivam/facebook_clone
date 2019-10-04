@@ -1,6 +1,6 @@
 module PagesHelper
-  def gravatar_helper user
-    image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email)}", class: 'rounded-circle gravatar-size'
+  def gravatar_helper(user, custom='')
+    image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email)}", class: "rounded-circle gravatar-size #{custom}"
   end
   
   def random_image
