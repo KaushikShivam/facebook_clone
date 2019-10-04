@@ -21,3 +21,19 @@ posts.each do |post|
     post.comments.create!(content: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto nobis in totam ad animi maiores fuga accusamus quas perferendis voluptas quod, ex aperiam, nisi qui officiis. Eveniet modi ut est!", user_id: user.id)
   end
 end
+
+30.times do |user|
+  name  = Faker::Name.name
+  email = Faker::Internet.email
+  password = "password"
+  User.create!(name:  name,
+  email: email,
+  password:              password,
+  password_confirmation: password)
+end
+
+potential_friends = User.all.offset(9)
+
+potential_friends.each do |friend|
+  user.friendships.create!(friend: friend, status: 2)
+end

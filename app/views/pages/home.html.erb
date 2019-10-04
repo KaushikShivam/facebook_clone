@@ -17,10 +17,10 @@
     <h5>Friends</h5>
     <div>
       <% @friends.each do |friend| %>
-      <div class="mb-2">
+      <div class="mb-2 card p-3">
         <%= link_to user_path(friend) do%>
           <%= gravatar_helper friend %>
-          <span><%= friend.name %></span>
+          <span class="ml-3"><%= friend.name %></span>
         <% end %>
       </div> 
       <% end %>

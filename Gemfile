@@ -21,6 +21,7 @@ gem 'gravatar_image_tag', '~> 1.2'
 gem 'jquery-rails', '4.3.1'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'omniauth-facebook'
+gem 'faker', '1.7.3'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
