@@ -18,7 +18,7 @@
         <% end %>
       <% else %>
         <div class="nav-box"><%= link_to 'Home', root_path, class: 'main-nav-link'  %></div>
-        <div class="nav-box"><%= link_to 'Friends', users_path, class: 'main-nav-link' %></div>
+        <div class="nav-box"><%= link_to 'Users', users_path, class: 'main-nav-link' %></div>
         <%= link_to current_user do %>
           <%= gravatar_helper current_user %>
         <% end %>
