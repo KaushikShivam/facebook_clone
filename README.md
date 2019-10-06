@@ -12,7 +12,7 @@ https://www.facebook.com
 - Users have a facebook like feed where they can view their posts and well as their friend's posts
 - Users can create posts with or without image
 - Users can view their profile
-- Users can comment and like or other posts
+- Users can comment and like on other posts
 
 ## Authors
 
