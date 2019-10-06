@@ -25,6 +25,6 @@ RSpec.describe 'user creates comment', type: :feature do
   scenario 'unsuccessfully' do
     fill_in('comment[content]', with: '')
     click_button('Submit')
-    expect(page).to have_content('Comment creation failed')
+    expect(@post.comments.count).to eql(0)
   end
 end

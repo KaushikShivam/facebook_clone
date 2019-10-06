@@ -27,7 +27,7 @@ RSpec.describe 'user deletes comment', type: :feature do
   end
 
   scenario 'unsuccessfully with hidden delete button' do
-    click_on('Log Out')
+    click_on('Log out')
     expect(page).to have_content('Signed out successfully.')
 
     @other_user = User.create(name: 'shivam', password: 'password',

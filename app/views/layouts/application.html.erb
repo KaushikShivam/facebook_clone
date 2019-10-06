@@ -14,8 +14,8 @@
     <nav class="navigation bg-white">
       <% if current_user.nil? %>
         <div class="nav-box"><%= link_to 'Sign up', new_user_registration_path, class: 'main-nav-link'  %></div>
-        <div class="nav-box"><%= link_to 'Login', new_user_session_path, class: 'main-nav-link'  %></div>
-        <div class="nav-box"><%= link_to 'Login with Facebook', user_facebook_omniauth_authorize_path, class: 'main-nav-link'  %></div>
+        <div class="nav-box"><%= link_to 'Log in', new_user_session_path, class: 'main-nav-link'  %></div>
+        <div class="nav-box"><%= link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path, class: 'main-nav-link'  %></div>
       <% else %>
         <div class="nav-box"><%= link_to 'Home', root_path, class: 'main-nav-link'  %></div>
         <div class="nav-box"><%= link_to 'Users', users_path, class: 'main-nav-link' %></div>
@@ -28,8 +28,6 @@
     </nav>
     
     <!-- Navigation end -->
-    
-
     
       <%= yield %>
       <%= alerts %>

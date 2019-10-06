@@ -18,7 +18,7 @@ RSpec.describe 'user creates post', type: :feature do
     fill_in('post[content]', with: 'content')
     fill_in('post[image_link]', with: 'www.image.com')
     click_button('Submit')
-    expect(page).to have_content('Post created successfully')
+    expect(@user.posts.count).to eql(1)
   end
 
   scenario 'creates post unsuccessfully' do
@@ -26,6 +26,6 @@ RSpec.describe 'user creates post', type: :feature do
     fill_in('post[content]', with: '')
     fill_in('post[image_link]', with: '')
     click_button('Submit')
-    expect(page).to have_content('Post creation failed. Please enter valid information')
+    expect(@user.posts.count).to eql(0)
   end
 end

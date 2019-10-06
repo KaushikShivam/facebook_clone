@@ -19,7 +19,7 @@ RSpec.describe 'user edits post', type: :feature do
     fill_in('post[content]', with: 'content')
     fill_in('post[image_link]', with: 'www.image.com')
     click_button('Submit')
-    expect(page).to have_content('Post saved successfully')
+    expect(@user.posts.first.image_link).to eql('www.image.com')
   end
 
   scenario 'edits post unsuccessfully' do
@@ -27,6 +27,6 @@ RSpec.describe 'user edits post', type: :feature do
     fill_in('post[content]', with: '')
     fill_in('post[image_link]', with: '')
     click_button('Submit')
-    expect(page).to have_content('Post update failed. Please enter valid information')
+    expect(@user.posts.first.content).to eql('content')
   end
 end

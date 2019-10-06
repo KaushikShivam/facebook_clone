@@ -19,7 +19,6 @@ RSpec.describe 'user sends a friend request', type: :feature do
   scenario 'successfully' do
     visit users_path
     click_on('Add friend')
-    expect(page).to have_content('Friend request sent')
-    expect(page).to have_content('Cancel Friend Request')
+    expect(@user.friends.count).to eql(1)
   end
 end

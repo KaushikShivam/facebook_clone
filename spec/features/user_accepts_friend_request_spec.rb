@@ -16,7 +16,7 @@ RSpec.describe 'user accepts a friend request', type: :feature do
     click_button('Log in')
     visit users_path
     click_on('Add friend')
-    click_on('Log Out')
+    click_on('Log out')
   end
 
   scenario 'successfully' do
@@ -25,6 +25,6 @@ RSpec.describe 'user accepts a friend request', type: :feature do
     click_button('Log in')
     visit user_friend_requests_path(@friend)
     click_on('Accept Friend Request')
-    expect(page).to have_content('Friend added')
+    expect(page).not_to have_content('Accept Friend Request')
   end
 end

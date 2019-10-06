@@ -10,11 +10,6 @@ RSpec.describe 'user signup', type: :feature do
     fill_in('user[password]', with: 'foobar')
     fill_in('user[password_confirmation]', with: 'foobar')
     click_button('Sign up')
-    expect(page).to have_content('Welcome! You have signed up successfully')
+    expect(page).to have_content('Log out')
   end
 end
-
-#   visit new_user_session_path
-#   fill_in('Email', with: 'example@email.com')
-#   fill_in('Password', with: 'foobar')
-#   click_button('Log in')

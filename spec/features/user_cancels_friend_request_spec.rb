@@ -20,7 +20,7 @@ RSpec.describe 'user deletes a friend request', type: :feature do
 
   scenario 'successfully' do
     click_on('Cancel Friend Request')
-    expect(page).to have_content('Friend request deleted')
+    expect(@user.friends.count).to eql(0)
     expect(page).to have_content('Add friend')
   end
 end

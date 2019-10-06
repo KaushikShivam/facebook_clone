@@ -17,6 +17,6 @@ RSpec.describe 'user deletes post', type: :feature do
 
   scenario 'deletes post successfully' do
     click_on('Delete post')
-    expect(page).to have_content('Post deleted successfully')
+    expect(@user.posts.count).to eql(0)
   end
 end

@@ -14,11 +14,11 @@ RSpec.describe 'user login', type: :feature do
   end
 
   scenario 'user login correctly' do
-    expect(page).to have_content('Signed in successfully')
+    expect(page).to have_content('Log out')
   end
 
   scenario 'user logout correctly' do
-    click_on('Log Out')
-    expect(page).to have_content('Signed out successfully.')
+    click_on('Log out')
+    expect(page).to have_content('Log in')
   end
 end
