@@ -4,11 +4,11 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(content: comment_params[:content], user: current_user)
-    if @comment.save
-      flash[:notice] = 'Comment created successfully!'
-    else
-      flash[:notice] = 'Comment creation failed'
-    end
+    flash[:notice] = if @comment.save
+                       'Comment created successfully!'
+                     else
+                       'Comment creation failed'
+                     end
     redirect_to @post
   end
 
