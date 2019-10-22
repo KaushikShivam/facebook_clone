@@ -15,7 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 
 # Project Dependencies
 gem 'bcrypt', '3.1.12'
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.3.1'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.2'
 gem 'faker', '1.7.3'
