@@ -12,8 +12,10 @@ Rails.application.routes.draw do
       get :update_friendship
       get :destroy_friendship
     end
-  end
-
+  end  
+  post 'personal_messages', to: 'personal_messages#create'
+  get 'personal_messages/new', to: 'personal_messages#new'
+  resources :conversations, only: [:index, :show]
   devise_for :users, path: '', path_names: { sign_up: 'signup', sign_in: 'login', edit: 'edit-user'},
              :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
