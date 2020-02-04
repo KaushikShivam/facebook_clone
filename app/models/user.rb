@@ -9,6 +9,11 @@ class User < ApplicationRecord
 
   validates_presence_of :name
 
+  has_many :authored_conversations, class_name: 'Conversation', foreign_key: 'author_id'
+  has_many :received_conversations, class_name: 'Conversation', foreign_key: 'received_id'
+
+  has_many :personal_messages, dependent: :destroy
+
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
@@ -37,4 +42,9 @@ class User < ApplicationRecord
       user.name = auth.info.name # assuming the user model has a name
     end
   end
+
+  def name
+    email.split('@')[0]
+  end
+
 end
