@@ -4,6 +4,10 @@ Facebook_clone is a clone of some of the features of the Facebook app.
 https://www.facebook.com
 ## [Live Link](https://morning-falls-89247.herokuapp.com)
 
+![screenshot](./Screenshot3.png)
+![screenshot](./Screenshot1.png)
+![screenshot](./Screenshot2.png)
+
 ## Features
 
 - Users can send friend requests
