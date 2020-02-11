@@ -6,8 +6,6 @@ https://www.facebook.com
 
 ![screenshot](./Screenshot3.png)
 ![screenshot](./Screenshot1.png)
-![screenshot](./Screenshot2.png)
-
 ## Features
 
 - Users can send friend requests
