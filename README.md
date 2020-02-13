@@ -12,14 +12,25 @@ https://www.facebook.com
 - Users can receive friend requests
 - Users can cancel friend requests
 - Users have a facebook like feed where they can view their posts and well as their friend's posts
-- Users can create posts with or without image
+- Users can create posts with or without images
 - Users can view their profile
-- Users can comment and like on other posts
+- Users can comment on and like other posts
 
 ## Authors
+👤 **Fatima Ahmed**
 
-[Shivam Kaushik](shivamkaushikofficial@gmail.com)
-[Fatima Ahmed](fatima.ahmed.muhsin@gmail.com)
+- Github: [@githubhandle](https://github.com/fatymahmed)
+- Twitter: [@twitterhandle](https://twitter.com/fatymahmed)
+- Linkedin: [linkedin](https://www.linkedin.com/in/fatimahmed/)
+- Email: fatima.ahmed.muhsin@gmail.com
+
+
+👤 **Shivam Kaushik**
+
+- Github: [@githubhandle](https://github.com/KaushikShivam)
+- Twitter: [@twitterhandle](https://twitter.com/kShivamDev)
+- Linkedin: [linkedin](https://www.linkedin.com/in/shivam-kaushik-bb8162102/)
+- Email shivamkaushikofficial@gmail.com
 
 ## Technologies
 
