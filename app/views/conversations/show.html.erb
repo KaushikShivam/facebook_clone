@@ -1,4 +1,4 @@
-<h1 id="convo">Chatting with <%= @conversation.with(current_user).name %></h1>
+<h1 id="convo"><%= @conversation.with(current_user).name %></h1>
 <div id="conversation-main">
   <div id="conversation-body">
     <%= render @conversation.personal_messages %>
